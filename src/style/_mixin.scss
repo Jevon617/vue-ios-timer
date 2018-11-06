@@ -1,0 +1,75 @@
+$color: #EF359A;
+$bg: #9f1d1d;
+$border:#eadede;
+
+$designWidth : 750; //如设计图是750
+@function px2rem( $px ){
+    @return $px*320/$designWidth/10 + rem;
+}
+
+@function px($px){
+  @return $px*0.7 + px;
+}
+
+// 兼容写法的mixin
+@mixin prix($attr,$value){
+
+  -webkit-#{$attr}:$value;
+  -moz-#{$attr}:$value;
+  -ms-#{$attr}:$value;
+  #{$attr}:$value;
+}
+
+// 背景图
+@mixin bg($url) {
+  background-image: url($url);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+
+// 宽高
+@mixin wh($width, $height){
+  width: $width;
+  height: $height;
+}
+
+// 字体大小,颜色
+@mixin sc($size, $color){
+  font-size: $size;
+  color: $color;
+}
+
+//字体大小、行高、字体
+@mixin font($size, $line-height, $family: 'Microsoft YaHei') {
+  font: #{$size}/#{$line-height} $family;
+}
+
+// 弹性布局
+@mixin flex($type:flex-start,$direction:row){
+  @include prix(display, flex);
+  @include prix(justify-content,$type);
+  @include prix(align-items,center);
+  @include prix(flex-direction,$direction);
+}
+// button样式
+@mixin button{
+  width: 100%;
+  line-height: 1.75rem;
+  background: $color;
+  color: #fff;
+  cursor: pointer;
+  margin: 0 auto;
+  text-align: center;
+  border-radius: .15rem;
+  margin-top: .6rem;
+}
+@mixin padding ($value){
+  padding:$value;
+  box-sizing: border-box;
+}
+@mixin ellipsis{
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+

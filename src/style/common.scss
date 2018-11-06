@@ -1,0 +1,109 @@
+@import "./mixin.scss";
+
+@font-face {
+  font-family: 'iconfont';  /* project id 850481 */
+  src: url('//at.alicdn.com/t/font_850481_zvo32gv2mjs.eot');
+  src: url('//at.alicdn.com/t/font_850481_zvo32gv2mjs.eot?#iefix') format('embedded-opentype'),
+  url('//at.alicdn.com/t/font_850481_zvo32gv2mjs.woff') format('woff'),
+  url('//at.alicdn.com/t/font_850481_zvo32gv2mjs.ttf') format('truetype'),
+  url('//at.alicdn.com/t/font_850481_zvo32gv2mjs.svg#iconfont') format('svg');
+}
+
+body, div, span, header, footer, nav, section, aside, article, ul, dl, dt, dd, li, a, p, h1, h2, h3, h4,h5, h6, i, b, textarea, button, input, select, figure, figcaption{
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  font-style: normal;
+  text-decoration: none;
+  border: none;
+  font-weight: normal;
+  font-family: "Microsoft Yahei";
+  box-sizing: border-box;
+  -webkit-tap-highlight-color:transparent;
+  -webkit-font-smoothing: antialiased;
+  outline: none;
+  
+  &:hover{
+    outline: none;
+  }
+}
+
+::-webkit-scrollbar
+{
+  width: 0;
+  height: 0;
+  background-color: #F5F5F5;
+}
+
+ ::-webkit-input-placeholder{
+  color: black;
+}
+
+html,body{
+  width:100%;
+  height:100%;
+}
+
+.clear:after{
+  content: '';
+  display: block;
+  clear: both;
+}
+
+.clear{
+  zoom:1;
+}
+
+input{
+  outline: none;
+  background-color: transparent;
+  border: none;
+}
+input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0px 1000px  white inset !important;
+}
+
+
+// vux样式重置
+
+.login .weui-cells::before{
+  border-top: none;
+}
+
+.login .weui-cells::after{
+  border-bottom: none;
+}
+
+.login .vux-x-input{
+  border-bottom: 1px solid #ccc;
+}
+
+.home .vux-swiper, .home .vux-swiper div{
+  height: px2rem(150) !important;
+  border-radius: px(8);
+}
+
+.home .vux-slider > .vux-indicator, .vux-slider .vux-indicator-right{
+  bottom: 1px;
+}
+
+.detail .vux-swiper{
+  height: px2rem(225) !important;
+}
+
+
+.home .vux-indicator{
+  i{
+    display: inline-block !important;
+    width: px2rem(15)!important;
+    height: px2rem(4) !important;
+    border-radius: px2rem(4) !important;
+    background-color: rgba(255,255,255,.3) !important;
+  }
+  .active{
+    background-color: white!important;
+  }
+  a{
+    margin-left: px2rem(10)!important;
+  }
+}
