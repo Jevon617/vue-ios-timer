@@ -253,7 +253,7 @@ export default {
 </script>
 
 <style scoped  lang="scss">
-@import '../../style/_mixin.scss';
+@import '../style/_mixin.scss';
 .timer{
 	position: fixed;
 	bottom: 0;
