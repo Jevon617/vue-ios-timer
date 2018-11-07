@@ -1,7 +1,7 @@
 {
   "name": "vue-ios-timer",
   "description": "A IOS style time picker based on Vue",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "author": "wj",
   "license": "MIT",
   "private": false,
@@ -11,11 +11,16 @@
     "build": "cross-env NODE_ENV=production webpack --progress --hide-modules"
   },
   "dependencies": {
-    "vue": "^2.5.11"
+    "vue": "^2.5.11",
+    "better-scroll": "^1.13.2"
   },
+  "keywords":[
+    "vue-ios-timer","vue", "timer-picker", "picker", "timer", "date", "datetime"
+  ],
+
   "repository": {
     "type": "git",
-    "url": "https://github.com/yucccc/vue-pay-keyboard"
+    "url": "https://github.com/smokeStar/vue-ios-timer"
   },
   "browserslist": [
     "> 1%",
