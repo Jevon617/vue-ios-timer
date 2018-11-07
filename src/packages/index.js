@@ -1,15 +1,14 @@
-import vueIosTimer from './timer.vue';
+import iosTimer from './timer.vue';
 
-const iosTimer = {
+const vueIosTimer = {
 	 install(Vue, options) {
-        Vue.component('ios-timer', vueIosTimer) 
+        Vue.component('vue-ios-timer', iosTimer) 
     }
 }
 
-
 if(typeof window !== 'undefined' && window.Vue){
-	window.Vue.use(iosTimer);
+	window.Vue.use(vueIosTimer);
 }
 
-export default iosTimer;
+export default vueIosTimer;
 

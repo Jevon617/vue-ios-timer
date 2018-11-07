@@ -3,12 +3,12 @@
 > A IOS style time picker based on Vue and better-scroll
 
 ## Installation
-    npm i better-scroll -D
-    npm i vue-ios-timer -D
+    npm i better-scroll --save
+    npm i vue-ios-timer --save
 
 ## Setup iosTimer
     import Vue from 'vue'
-    import iosTimer from 'iosTimer'
+    import vueIosTimer from 'vue-ios-timer'
 
 ## Useage
     <ios-timer type="datetime" datetime="2018-10-10 08:30"  @getTime="getTime"></ios-timer>
@@ -23,6 +23,8 @@
  |`datetime`|start datetime|new Date()|like '1990-10-10 08:30' format|
  |`time`|start time|new Date()|like '08:30' format|
  |`getTime`|callback|none|none|
+ |`show`|method:show timer|none|none|
+
 
 ## License
 [The MIT License](https://opensource.org/licenses/MIT)

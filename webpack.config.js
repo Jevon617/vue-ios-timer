@@ -2,13 +2,12 @@ var path = require('path')
 var webpack = require('webpack')
 
 module.exports = {
-  entry: './src/main.js',
   entry: './src/packages/index.js',
   output: {
-    path: path.resolve(__dirname, './dist'),
+    path: path.resolve(__dirname, 'dist'),
     publicPath: '/dist/',
     filename: 'timer.js',
-    library : 'iosTimer',
+    library : 'vueIosTimer',
     libraryTarget: 'umd',
     umdNamedDefine: true
   },
