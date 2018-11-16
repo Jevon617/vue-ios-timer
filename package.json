@@ -1,7 +1,7 @@
 {
   "name": "vue-ios-timer",
   "description": "A IOS style time picker based on Vue",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "author": "wj",
   "license": "MIT",
   "private": false,

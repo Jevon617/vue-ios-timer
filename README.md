@@ -11,7 +11,8 @@
     import vueIosTimer from 'vue-ios-timer'
 
 ## Useage
-    <ios-timer type="datetime" datetime="2018-10-10 08:30"  @getTime="getTime"></ios-timer>
+    <ios-timer type="datetime" ref="timer" datetime="2018-10-10 08:30"  @getTime="getTime"></ios-timer>
+    this.$refs.timer.show()
 
 ## Constructor options
  |key|descriptions|default|options|
