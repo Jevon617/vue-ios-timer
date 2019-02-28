@@ -28,6 +28,12 @@
 </template>
 
 <script>
+
+function padStart(num){
+	let res = num >= 10 && num || ('0' + num);
+	return res;
+}
+
 import Bscroll from 'better-scroll';
 export default {
 	data(){
@@ -48,7 +54,7 @@ export default {
 	},
 	props : {
 		type : {
-			type : String,      //三个值可选, 默认是date:日期, time:时间, datetime : 日期时间     
+			type : String,      //三个值可选, 默认是date:日期, time:时间, datetime : 日期时间
 			default : 'date'
 		},
 		cancelText : {
@@ -79,12 +85,14 @@ export default {
 				if(key == 'showTimer'){
 					this.$data[key] = false;
 				}else if(key == 'timex'){
-					if(!this.time) this.timex = new Date();
+					if(!this.time){
+						this.timex = new Date().getHours() + ':' + new Date().getMinutes();
+					}
 				}else if(key == 'datex'){
 					if(!this.date) this.datex = new Date();
 				}else if(key == 'datetimex'){
 					if(!this.datetime)this.datetimex = new Date();
-				}else{ 
+				}else{
 					this.$data[key] = [];
 				}
 			}
@@ -106,15 +114,15 @@ export default {
 
 			for(let i=0; i<60; i++){
 				if(i>0 && i<=12){
-					this.monthes.push(String(i).padStart(2,'0')+'月');
+					this.monthes.push(padStart(i)+'月');
 				}
 				if(i>0 && i<=31){
-					this.days.push(String(i).padStart(2,'0')+'日');
+					this.days.push(padStart(i)+'日');
 				}
 				if(i<24){
-					this.hours.push(String(i).padStart(2,'0')+'时');
+					this.hours.push(padStart(i)+'时');
 				}
-				this.minutes.push(String(i).padStart(2,'0')+'分');
+				this.minutes.push(padStart(i)+'分');
 			}
 			// 当type=date并且有默认值时
 			if(this.type == 'date' && this.datex){
@@ -203,15 +211,15 @@ export default {
 					if(i==0){
 						item = 1900 + item;
 					}else if(i==1 || i==2){
-						item = String(item+1).padStart(2,'0');
+						item = padStart(item+1);
 					}else{
-						item = String(item).padStart(2,'0');
+						item = padStart(item);
 					}
 					return item;
 				})
 			}else{
 				indexes = indexes.map((item,i)=>{
-					item = String(item).padStart(2,'0');
+					item = padStart(item);;
 					return item;
 				})
 			}
@@ -223,19 +231,19 @@ export default {
 			}else{
 				result = `${indexes[0]}-${indexes[1]}-${indexes[2]} ${indexes[3]}:${indexes[4]}`;
 			}
-			
+
 			this.showTimer = false;
 			this.$emit('getTime',result);
 		},
 		getDays(year,month){
 			// 根据年份和月份得到当月的天数
-			let isLeapYear = (year % 400 == 0) || (year % 4 == 0 && year % 100 != 0); 
+			let isLeapYear = (year % 400 == 0) || (year % 4 == 0 && year % 100 != 0);
 			let bigMonthes = [1,3,5,7,8,10,12];
 			let isBigMonth = bigMonthes.indexOf(month) > -1;
 			let days = [];
 
 			for(let i=1; i<=31; i++){
-				days.push(String(i).padStart(2,"0")+'日');
+				days.push(padStart(i)+'日');
 			};
 
 			if(isBigMonth){
@@ -356,6 +364,6 @@ export default {
 	transform: translateY(273px);
 }
 
-          
+
 
 </style>
